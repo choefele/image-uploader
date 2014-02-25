@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		622CF24518BD24A000C11833 /* IMG_0305.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 622CF24318BD24A000C11833 /* IMG_0305.JPG */; };
 		622CF24618BD24A000C11833 /* IMG_0310.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 622CF24418BD24A000C11833 /* IMG_0310.JPG */; };
+		622CF24918BD2C1400C11833 /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622CF24818BD2C1400C11833 /* PhotoEditorViewController.m */; };
+		622CF24C18BD2E2400C11833 /* AssetsLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622CF24B18BD2E2400C11833 /* AssetsLibraryController.m */; };
 		624B8AAB18BCAB2000ED67E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAA18BCAB2000ED67E7 /* Foundation.framework */; };
 		624B8AAD18BCAB2000ED67E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAC18BCAB2000ED67E7 /* CoreGraphics.framework */; };
 		624B8AAF18BCAB2000ED67E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAE18BCAB2000ED67E7 /* UIKit.framework */; };
@@ -21,7 +23,6 @@
 		624B8ACB18BCAB2000ED67E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAA18BCAB2000ED67E7 /* Foundation.framework */; };
 		624B8ACC18BCAB2000ED67E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAE18BCAB2000ED67E7 /* UIKit.framework */; };
 		624B8AD418BCAB2000ED67E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 624B8AD218BCAB2000ED67E7 /* InfoPlist.strings */; };
-		624B8AD618BCAB2000ED67E7 /* ImageUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 624B8AD518BCAB2000ED67E7 /* ImageUploaderTests.m */; };
 		624B8AE118BCABBD00ED67E7 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */; };
 		624B8AE318BCE6E500ED67E7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AE218BCE6E500ED67E7 /* AssetsLibrary.framework */; };
 		62C9CF6B18BD1C9B00FA724E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */; };
@@ -40,6 +41,10 @@
 /* Begin PBXFileReference section */
 		622CF24318BD24A000C11833 /* IMG_0305.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0305.JPG; sourceTree = "<group>"; };
 		622CF24418BD24A000C11833 /* IMG_0310.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0310.JPG; sourceTree = "<group>"; };
+		622CF24718BD2C1400C11833 /* PhotoEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorViewController.h; sourceTree = "<group>"; };
+		622CF24818BD2C1400C11833 /* PhotoEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorViewController.m; sourceTree = "<group>"; };
+		622CF24A18BD2E2400C11833 /* AssetsLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsLibraryController.h; sourceTree = "<group>"; };
+		622CF24B18BD2E2400C11833 /* AssetsLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsLibraryController.m; sourceTree = "<group>"; };
 		624B8AA718BCAB2000ED67E7 /* ImageUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624B8AAA18BCAB2000ED67E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		624B8AAC18BCAB2000ED67E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,7 +61,6 @@
 		624B8AC918BCAB2000ED67E7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		624B8AD118BCAB2000ED67E7 /* ImageUploaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageUploaderTests-Info.plist"; sourceTree = "<group>"; };
 		624B8AD318BCAB2000ED67E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		624B8AD518BCAB2000ED67E7 /* ImageUploaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageUploaderTests.m; sourceTree = "<group>"; };
 		624B8ADF18BCABBD00ED67E7 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		624B8AE218BCE6E500ED67E7 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -137,8 +141,12 @@
 				624B8ABC18BCAB2000ED67E7 /* Main.storyboard */,
 				624B8ADF18BCABBD00ED67E7 /* PhotosViewController.h */,
 				624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */,
+				622CF24A18BD2E2400C11833 /* AssetsLibraryController.h */,
+				622CF24B18BD2E2400C11833 /* AssetsLibraryController.m */,
 				62C9CF6918BD1C9B00FA724E /* PhotoCollectionViewCell.h */,
 				62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */,
+				622CF24718BD2C1400C11833 /* PhotoEditorViewController.h */,
+				622CF24818BD2C1400C11833 /* PhotoEditorViewController.m */,
 				624B8AC218BCAB2000ED67E7 /* Images.xcassets */,
 				622CF24218BD24A000C11833 /* Sample Images */,
 				624B8AB118BCAB2000ED67E7 /* Supporting Files */,
@@ -160,7 +168,6 @@
 		624B8ACF18BCAB2000ED67E7 /* ImageUploaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				624B8AD518BCAB2000ED67E7 /* ImageUploaderTests.m */,
 				624B8AD018BCAB2000ED67E7 /* Supporting Files */,
 			);
 			path = ImageUploaderTests;
@@ -274,9 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622CF24C18BD2E2400C11833 /* AssetsLibraryController.m in Sources */,
 				624B8ABB18BCAB2000ED67E7 /* AppDelegate.m in Sources */,
 				62C9CF6B18BD1C9B00FA724E /* PhotoCollectionViewCell.m in Sources */,
 				624B8AE118BCABBD00ED67E7 /* PhotosViewController.m in Sources */,
+				622CF24918BD2C1400C11833 /* PhotoEditorViewController.m in Sources */,
 				624B8AB718BCAB2000ED67E7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				624B8AD618BCAB2000ED67E7 /* ImageUploaderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
