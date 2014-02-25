@@ -15,7 +15,7 @@
 @interface PhotosViewController ()
 
 @property (nonatomic, strong) ALAssetsLibrary *assetsLibrary;
-@property (nonatomic, strong) NSMutableArray *assets;
+@property (nonatomic, strong) NSArray *assets;
 
 @end
 
@@ -26,11 +26,15 @@
     [super viewDidLoad];
     
     self.assetsLibrary = [[ALAssetsLibrary alloc] init];
-    self.assets = [[NSMutableArray alloc] init];
     [self updateData];
     
     // Register for changes to assets
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(assetsLibraryChanged:) name:ALAssetsLibraryChangedNotification object:nil];
+}
+
+- (void)dealloc
+{
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)assetsLibraryChanged:(NSNotification *)notification
@@ -40,20 +44,33 @@
 
 - (void)updateData
 {
-    [self.assets removeAllObjects];
-    [self.collectionView reloadData];
-    
+    NSMutableArray *assets = [NSMutableArray array];
     [self.assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         group.assetsFilter = [ALAssetsFilter allPhotos];
         
         [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
             if (result != nil) {
-                [self.assets addObject:result];
+                [assets addObject:result];
             } else {
-                [self.collectionView reloadData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.assets = [assets copy];
+                    [self.collectionView reloadData];
+                });
             }
         }];
     } failureBlock:NULL];
+}
+
+- (IBAction)addPhotos:(id)sender
+{
+    NSBundle *bundle = NSBundle.mainBundle;
+    
+    NSArray *imageNames = @[@"IMG_0305", @"IMG_0310"];
+    for (NSString *imageName in imageNames) {
+        NSString *imagePath = [bundle pathForResource:imageName ofType:@"JPG"];
+        UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+        [self.assetsLibrary writeImageToSavedPhotosAlbum:image.CGImage orientation:ALAssetOrientationUp completionBlock:NULL];
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

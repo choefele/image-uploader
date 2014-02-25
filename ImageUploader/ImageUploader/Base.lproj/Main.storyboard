@@ -43,7 +43,13 @@
                             <outlet property="delegate" destination="sYe-2A-GWH" id="Pxf-Mm-fER"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="uQq-4X-9O4"/>
+                    <navigationItem key="navigationItem" id="uQq-4X-9O4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="O4B-z4-SCK">
+                            <connections>
+                                <action selector="addPhotos:" destination="sYe-2A-GWH" id="aIU-jJ-a08"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoF-CL-B8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

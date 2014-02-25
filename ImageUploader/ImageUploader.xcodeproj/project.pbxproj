@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622CF24518BD24A000C11833 /* IMG_0305.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 622CF24318BD24A000C11833 /* IMG_0305.JPG */; };
+		622CF24618BD24A000C11833 /* IMG_0310.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 622CF24418BD24A000C11833 /* IMG_0310.JPG */; };
 		624B8AAB18BCAB2000ED67E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAA18BCAB2000ED67E7 /* Foundation.framework */; };
 		624B8AAD18BCAB2000ED67E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAC18BCAB2000ED67E7 /* CoreGraphics.framework */; };
 		624B8AAF18BCAB2000ED67E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AAE18BCAB2000ED67E7 /* UIKit.framework */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		622CF24318BD24A000C11833 /* IMG_0305.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0305.JPG; sourceTree = "<group>"; };
+		622CF24418BD24A000C11833 /* IMG_0310.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0310.JPG; sourceTree = "<group>"; };
 		624B8AA718BCAB2000ED67E7 /* ImageUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624B8AAA18BCAB2000ED67E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		624B8AAC18BCAB2000ED67E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622CF24218BD24A000C11833 /* Sample Images */ = {
+			isa = PBXGroup;
+			children = (
+				622CF24318BD24A000C11833 /* IMG_0305.JPG */,
+				622CF24418BD24A000C11833 /* IMG_0310.JPG */,
+			);
+			path = "Sample Images";
+			sourceTree = "<group>";
+		};
 		624B8A9E18BCAB2000ED67E7 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +140,7 @@
 				62C9CF6918BD1C9B00FA724E /* PhotoCollectionViewCell.h */,
 				62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */,
 				624B8AC218BCAB2000ED67E7 /* Images.xcassets */,
+				622CF24218BD24A000C11833 /* Sample Images */,
 				624B8AB118BCAB2000ED67E7 /* Supporting Files */,
 			);
 			path = ImageUploader;
@@ -240,6 +254,8 @@
 				624B8AC318BCAB2000ED67E7 /* Images.xcassets in Resources */,
 				624B8AB518BCAB2000ED67E7 /* InfoPlist.strings in Resources */,
 				624B8ABE18BCAB2000ED67E7 /* Main.storyboard in Resources */,
+				622CF24618BD24A000C11833 /* IMG_0310.JPG in Resources */,
+				622CF24518BD24A000C11833 /* IMG_0305.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
