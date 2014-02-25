@@ -57,6 +57,7 @@
 {
     if ([segue.identifier isEqualToString:@"photosToPhotoEditor"]) {
         PhotoEditorViewController *photoEditor = (PhotoEditorViewController *)segue.destinationViewController;
+        (void)photoEditor;
     }
 }
 
