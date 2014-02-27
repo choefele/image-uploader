@@ -26,6 +26,9 @@
 		624B8AE118BCABBD00ED67E7 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */; };
 		624B8AE318BCE6E500ED67E7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AE218BCE6E500ED67E7 /* AssetsLibrary.framework */; };
 		62C9CF6B18BD1C9B00FA724E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */; };
+		62EF787A18BFC84E00AD51BC /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EF787918BFC84E00AD51BC /* NetworkService.m */; };
+		62EF787C18BFCC9F00AD51BC /* NetworkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EF787B18BFCC9F00AD51BC /* NetworkServiceTests.m */; };
+		62EF787E18BFCE6100AD51BC /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62EF787D18BFCE6100AD51BC /* test_image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,10 @@
 		624B8AE218BCE6E500ED67E7 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		62C9CF6918BD1C9B00FA724E /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		62EF787818BFC84E00AD51BC /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		62EF787918BFC84E00AD51BC /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		62EF787B18BFCC9F00AD51BC /* NetworkServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkServiceTests.m; sourceTree = "<group>"; };
+		62EF787D18BFCE6100AD51BC /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +154,8 @@
 				62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */,
 				622CF24718BD2C1400C11833 /* PhotoEditorViewController.h */,
 				622CF24818BD2C1400C11833 /* PhotoEditorViewController.m */,
+				62EF787818BFC84E00AD51BC /* NetworkService.h */,
+				62EF787918BFC84E00AD51BC /* NetworkService.m */,
 				624B8AC218BCAB2000ED67E7 /* Images.xcassets */,
 				622CF24218BD24A000C11833 /* Sample Images */,
 				624B8AB118BCAB2000ED67E7 /* Supporting Files */,
@@ -168,6 +177,8 @@
 		624B8ACF18BCAB2000ED67E7 /* ImageUploaderTests */ = {
 			isa = PBXGroup;
 			children = (
+				62EF787D18BFCE6100AD51BC /* test_image.jpg */,
+				62EF787B18BFCC9F00AD51BC /* NetworkServiceTests.m */,
 				624B8AD018BCAB2000ED67E7 /* Supporting Files */,
 			);
 			path = ImageUploaderTests;
@@ -271,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				624B8AD418BCAB2000ED67E7 /* InfoPlist.strings in Resources */,
+				62EF787E18BFCE6100AD51BC /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +298,7 @@
 				62C9CF6B18BD1C9B00FA724E /* PhotoCollectionViewCell.m in Sources */,
 				624B8AE118BCABBD00ED67E7 /* PhotosViewController.m in Sources */,
 				622CF24918BD2C1400C11833 /* PhotoEditorViewController.m in Sources */,
+				62EF787A18BFC84E00AD51BC /* NetworkService.m in Sources */,
 				624B8AB718BCAB2000ED67E7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EF787C18BFCC9F00AD51BC /* NetworkServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
