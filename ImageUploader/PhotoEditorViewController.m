@@ -9,12 +9,16 @@
 #import "PhotoEditorViewController.h"
 
 #import "CoreImageService.h"
+#import "NetworkService.h"
 
 @interface PhotoEditorViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *thumbnailButtons;
+
+@property (assign, nonatomic) NSUInteger selectedIndex;
 @property (strong, nonatomic) CoreImageService *coreImageService;
+@property (strong, nonatomic) NetworkService *networkService;
 
 @end
 
@@ -25,6 +29,8 @@
     [super viewDidLoad];
 
     self.coreImageService = [[CoreImageService alloc] initWithAsset:self.asset];
+    self.networkService = [[NetworkService alloc] init];
+    
     [self update];
 }
 
@@ -46,6 +52,7 @@
 {
     UIImage *image = [sender backgroundImageForState:UIControlStateNormal];
     if (image) {
+        self.selectedIndex = [self.thumbnailButtons indexOfObject:sender];
         self.mainImageView.image = image;
     }
 }
@@ -57,7 +64,11 @@
 
 - (IBAction)send:(id)sender
 {
-    
+    [self.coreImageService createFilteredImageForFilterIndex:self.selectedIndex completionBlock:^(UIImage *image) {
+        [self.networkService uploadImage:image withCompletionBlock:^{
+            NSLog(@"done %tu", self.selectedIndex);
+        }];
+    }];
 }
 
 @end

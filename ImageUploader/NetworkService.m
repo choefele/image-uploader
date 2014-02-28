@@ -27,6 +27,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self.session invalidateAndCancel];
+}
+
 - (void)uploadImage:(UIImage *)image withCompletionBlock:(void (^)())completionBlock
 {
     NSURL *url = [NSURL URLWithString:@"http://posttestserver.com/post.php"];
