@@ -8,11 +8,47 @@
 
 #import "PhotoEditorViewController.h"
 
+#import "CoreImageService.h"
+
 @interface PhotoEditorViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *thumbnailButtons;
+@property (strong, nonatomic) CoreImageService *coreImageService;
 
 @end
 
 @implementation PhotoEditorViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.coreImageService = [[CoreImageService alloc] initWithAsset:self.asset];
+    [self update];
+}
+
+- (void)update
+{
+    self.mainImageView.image = [UIImage imageWithCGImage:self.coreImageService.fullScreenCGImage];
+    UIButton *defaultButton = self.thumbnailButtons[0];
+    [defaultButton setBackgroundImage:self.mainImageView.image forState:UIControlStateNormal];
+    
+    for (NSUInteger i = 1; i < self.thumbnailButtons.count; i++) {
+        [self.coreImageService createFilteredImageForFilterIndex:i completionBlock:^(UIImage *image) {
+            UIButton *button = self.thumbnailButtons[i];
+            [button setBackgroundImage:image forState:UIControlStateNormal];
+        }];
+    }
+}
+
+- (IBAction)selectFilter:(UIButton *)sender
+{
+    UIImage *image = [sender backgroundImageForState:UIControlStateNormal];
+    if (image) {
+        self.mainImageView.image = image;
+    }
+}
 
 - (IBAction)cancel:(id)sender
 {

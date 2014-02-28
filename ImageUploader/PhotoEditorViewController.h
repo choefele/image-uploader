@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface PhotoEditorViewController : UIViewController
+
+@property (strong, nonatomic) ALAsset *asset;
 
 @end

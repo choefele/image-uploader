@@ -56,8 +56,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"photosToPhotoEditor"]) {
-        PhotoEditorViewController *photoEditor = (PhotoEditorViewController *)segue.destinationViewController;
-        (void)photoEditor;
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        PhotoEditorViewController *photoEditor = (PhotoEditorViewController *)navigationController.topViewController;
+        NSIndexPath *indexPath = self.collectionView.indexPathsForSelectedItems.lastObject;
+        ALAsset *asset = self.assetsLibraryController.assets[indexPath.row];
+        photoEditor.asset = asset;
     }
 }
 

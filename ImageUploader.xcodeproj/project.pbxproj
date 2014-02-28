@@ -25,6 +25,7 @@
 		624B8AD418BCAB2000ED67E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 624B8AD218BCAB2000ED67E7 /* InfoPlist.strings */; };
 		624B8AE118BCABBD00ED67E7 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */; };
 		624B8AE318BCE6E500ED67E7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B8AE218BCE6E500ED67E7 /* AssetsLibrary.framework */; };
+		625A3D6B18C0B85E004A50CF /* CoreImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 625A3D6A18C0B85E004A50CF /* CoreImageService.m */; };
 		62C9CF6B18BD1C9B00FA724E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */; };
 		62EF787A18BFC84E00AD51BC /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EF787918BFC84E00AD51BC /* NetworkService.m */; };
 		62EF787C18BFCC9F00AD51BC /* NetworkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EF787B18BFCC9F00AD51BC /* NetworkServiceTests.m */; };
@@ -67,6 +68,8 @@
 		624B8ADF18BCABBD00ED67E7 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		624B8AE218BCE6E500ED67E7 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		625A3D6918C0B85E004A50CF /* CoreImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageService.h; sourceTree = "<group>"; };
+		625A3D6A18C0B85E004A50CF /* CoreImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageService.m; sourceTree = "<group>"; };
 		62C9CF6918BD1C9B00FA724E /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		62EF787818BFC84E00AD51BC /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
@@ -148,12 +151,14 @@
 				624B8ABC18BCAB2000ED67E7 /* Main.storyboard */,
 				624B8ADF18BCABBD00ED67E7 /* PhotosViewController.h */,
 				624B8AE018BCABBD00ED67E7 /* PhotosViewController.m */,
-				622CF24A18BD2E2400C11833 /* AssetsLibraryController.h */,
-				622CF24B18BD2E2400C11833 /* AssetsLibraryController.m */,
 				62C9CF6918BD1C9B00FA724E /* PhotoCollectionViewCell.h */,
 				62C9CF6A18BD1C9B00FA724E /* PhotoCollectionViewCell.m */,
+				622CF24A18BD2E2400C11833 /* AssetsLibraryController.h */,
+				622CF24B18BD2E2400C11833 /* AssetsLibraryController.m */,
 				622CF24718BD2C1400C11833 /* PhotoEditorViewController.h */,
 				622CF24818BD2C1400C11833 /* PhotoEditorViewController.m */,
+				625A3D6918C0B85E004A50CF /* CoreImageService.h */,
+				625A3D6A18C0B85E004A50CF /* CoreImageService.m */,
 				62EF787818BFC84E00AD51BC /* NetworkService.h */,
 				62EF787918BFC84E00AD51BC /* NetworkService.m */,
 				624B8AC218BCAB2000ED67E7 /* Images.xcassets */,
@@ -293,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625A3D6B18C0B85E004A50CF /* CoreImageService.m in Sources */,
 				622CF24C18BD2E2400C11833 /* AssetsLibraryController.m in Sources */,
 				624B8ABB18BCAB2000ED67E7 /* AppDelegate.m in Sources */,
 				62C9CF6B18BD1C9B00FA724E /* PhotoCollectionViewCell.m in Sources */,
