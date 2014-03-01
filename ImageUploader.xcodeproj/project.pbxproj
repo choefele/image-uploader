@@ -49,6 +49,7 @@
 		622CF24818BD2C1400C11833 /* PhotoEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorViewController.m; sourceTree = "<group>"; };
 		622CF24A18BD2E2400C11833 /* AssetsLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsLibraryController.h; sourceTree = "<group>"; };
 		622CF24B18BD2E2400C11833 /* AssetsLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsLibraryController.m; sourceTree = "<group>"; };
+		623F0AB918C259FD00D35605 /* NetworkServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkServiceDelegate.h; sourceTree = "<group>"; };
 		624B8AA718BCAB2000ED67E7 /* ImageUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624B8AAA18BCAB2000ED67E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		624B8AAC18BCAB2000ED67E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +162,7 @@
 				625A3D6A18C0B85E004A50CF /* CoreImageService.m */,
 				62EF787818BFC84E00AD51BC /* NetworkService.h */,
 				62EF787918BFC84E00AD51BC /* NetworkService.m */,
+				623F0AB918C259FD00D35605 /* NetworkServiceDelegate.h */,
 				624B8AC218BCAB2000ED67E7 /* Images.xcassets */,
 				622CF24218BD24A000C11833 /* Sample Images */,
 				624B8AB118BCAB2000ED67E7 /* Supporting Files */,

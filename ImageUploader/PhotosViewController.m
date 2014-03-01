@@ -8,13 +8,20 @@
 
 #import "PhotosViewController.h"
 
-#import "AssetsLibraryController.h"
 #import "PhotoCollectionViewCell.h"
 #import "PhotoEditorViewController.h"
 
-@interface PhotosViewController ()
+#import "AssetsLibraryController.h"
+#import "NetworkService.h"
+#import "NetworkServiceDelegate.h"
 
-@property (nonatomic, strong) AssetsLibraryController *assetsLibraryController;
+@interface PhotosViewController () <NetworkServiceDelegate>
+
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+
+@property (strong, nonatomic) AssetsLibraryController *assetsLibraryController;
+@property (strong, nonatomic) NetworkService *networkService;
+@property (weak, nonatomic) NSURLSessionTask *currentUploadTask;
 
 @end
 
@@ -25,6 +32,8 @@
     [super viewDidLoad];
     
     self.assetsLibraryController = [[AssetsLibraryController alloc] initWithCollectionView:self.collectionView];
+    self.networkService = [[NetworkService alloc] init];
+    self.networkService.delegate = self;
 }
 
 - (IBAction)addPhotos:(id)sender
@@ -37,6 +46,20 @@
         UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
         [self.assetsLibraryController writePhoto:image withCompletionBlock:NULL];
     }
+}
+
+- (void)uploadPhoto:(UIImage *)image
+{
+    self.progressView.hidden = NO;
+    self.progressView.progress = 0;
+    [self.networkService uploadImage:image withCompletionBlock:^{
+        self.progressView.hidden = YES;
+    }];
+}
+
+- (void)networkService:(NetworkService *)networkService didSendImageDataWithProgress:(float)progress
+{
+    self.progressView.progress = progress;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -61,6 +84,9 @@
         NSIndexPath *indexPath = self.collectionView.indexPathsForSelectedItems.lastObject;
         ALAsset *asset = self.assetsLibraryController.assets[indexPath.row];
         photoEditor.asset = asset;
+        photoEditor.completionBlock = ^(UIImage *image) {
+            [self uploadPhoto:image];
+        };
     }
 }
 

@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol NetworkServiceDelegate;
+
 @interface NetworkService : NSObject
+
+@property (nonatomic, weak) id<NetworkServiceDelegate> delegate;
 
 - (void)uploadImage:(UIImage *)image withCompletionBlock:(void (^)())completionBlock;
 

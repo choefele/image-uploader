@@ -45,12 +45,20 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="uQq-4X-9O4">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="O4B-z4-SCK">
                             <connections>
                                 <action selector="addPhotos:" destination="sYe-2A-GWH" id="aIU-jJ-a08"/>
                             </connections>
                         </barButtonItem>
+                        <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="MJa-Pb-5AN">
+                            <rect key="frame" x="50" y="21" width="262" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
                     </navigationItem>
+                    <connections>
+                        <outlet property="progressView" destination="MJa-Pb-5AN" id="BvK-cq-oKG"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoF-CL-B8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

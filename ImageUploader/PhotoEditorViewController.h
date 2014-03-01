@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
+@class NetworkService;
+
 @interface PhotoEditorViewController : UIViewController
 
 @property (strong, nonatomic) ALAsset *asset;
+@property (nonatomic, copy) void (^completionBlock)(UIImage *image);
 
 @end

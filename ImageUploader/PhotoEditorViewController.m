@@ -18,7 +18,6 @@
 
 @property (assign, nonatomic) NSUInteger selectedIndex;
 @property (strong, nonatomic) CoreImageService *coreImageService;
-@property (strong, nonatomic) NetworkService *networkService;
 
 @end
 
@@ -29,7 +28,6 @@
     [super viewDidLoad];
 
     self.coreImageService = [[CoreImageService alloc] initWithAsset:self.asset];
-    self.networkService = [[NetworkService alloc] init];
     
     [self update];
 }
@@ -64,11 +62,10 @@
 
 - (IBAction)send:(id)sender
 {
-    [self.coreImageService createFilteredImageForFilterIndex:self.selectedIndex completionBlock:^(UIImage *image) {
-        [self.networkService uploadImage:image withCompletionBlock:^{
-            NSLog(@"done %tu", self.selectedIndex);
-        }];
-    }];
+    if (self.completionBlock) {
+        self.completionBlock(self.mainImageView.image);
+    }
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

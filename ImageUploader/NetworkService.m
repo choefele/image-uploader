@@ -8,7 +8,9 @@
 
 #import "NetworkService.h"
 
-@interface NetworkService ()
+#import "NetworkServiceDelegate.h"
+
+@interface NetworkService () <NSURLSessionTaskDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 
@@ -21,7 +23,7 @@
     self = [super init];
     if (self) {
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
     }
     
     return self;
@@ -42,10 +44,22 @@
     
     NSURLSessionUploadTask *uploadTask = [self.session uploadTaskWithRequest:request fromData:imageData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (completionBlock) {
-            completionBlock();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock();
+            });
         }
     }];
     [uploadTask resume];
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
+{
+    if ([self.delegate respondsToSelector:@selector(networkService:didSendImageDataWithProgress:)]) {
+        float progress = (float)totalBytesSent/(float)totalBytesExpectedToSend;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate networkService:self didSendImageDataWithProgress:progress];
+        });
+    }
 }
 
 @end
