@@ -32,15 +32,27 @@
 
 - (CIFilter *)createFilterForIndex:(NSUInteger)index
 {
-    CIFilter *sepiaFilter = [CIFilter filterWithName:@"CISepiaTone" keysAndValues: kCIInputImageKey, self.fullScreenCIImage, @"inputIntensity", @0.8, nil];
+    CIFilter *filter;
     
-    return sepiaFilter;
+    if (index == 1) {
+        filter = [CIFilter filterWithName:@"CIPhotoEffectChrome" keysAndValues: kCIInputImageKey, self.fullScreenCIImage, nil];
+    } else if (index == 2) {
+        filter = [CIFilter filterWithName:@"CIPhotoEffectFade" keysAndValues: kCIInputImageKey, self.fullScreenCIImage, nil];
+    } else if (index == 3) {
+        filter = [CIFilter filterWithName:@"CIPhotoEffectInstant" keysAndValues: kCIInputImageKey, self.fullScreenCIImage, nil];
+    } else if (index == 4) {
+        filter = [CIFilter filterWithName:@"CIPhotoEffectMono" keysAndValues: kCIInputImageKey, self.fullScreenCIImage, nil];
+    } else {
+        filter = [CIFilter filterWithName:@"CIPhotoEffectNoir" keysAndValues: kCIInputImageKey, self.fullScreenCIImage, nil];
+    }
+    
+    return filter;
 }
 
 - (void)createFilteredImageForFilterIndex:(NSUInteger)index completionBlock:(void (^)(UIImage *image))completionBlock
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        CIFilter *filter = [self createFilterForIndex:0];
+        CIFilter *filter = [self createFilterForIndex:index];
         CIImage *outputImage = [filter outputImage];
         CGImageRef outputImageCG = [self.contextCI createCGImage:outputImage fromRect:outputImage.extent];
         UIImage *newImage = [UIImage imageWithCGImage:outputImageCG];

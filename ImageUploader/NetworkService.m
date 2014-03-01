@@ -43,6 +43,9 @@
     NSData *imageData = UIImageJPEGRepresentation(image, 0.6);
     
     NSURLSessionUploadTask *uploadTask = [self.session uploadTaskWithRequest:request fromData:imageData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *dataAsString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"Request done: %@", dataAsString);
+        
         if (completionBlock) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionBlock();
